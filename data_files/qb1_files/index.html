@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://cdn.flashtalking.com/93522/2512419/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <style></style><title>300x250</title>
+    <style>
+        body, ft-richload, #iRichload{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 728px;
+            height: 90px;
+        }
+    </style>
+</head>
+<body class=" hasGoogleVoiceExt">
+    <ft-richload name="iRichload" id="iRichload"></ft-richload>
+    <script src="./html5API.js.download"></script>
+    <script type="text/javascript">
+        myFT.on("instantads", function(){
+          myFT.on('richload', function(){
+            myFT.require(['feeds'], function(feeds){
+              myFT.richLoads.iRichload.frame.contentWindow.Ad.initialize();
+            });
+          });
+        });
+    </script>
+
+</body></html>

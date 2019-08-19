@@ -1,0 +1,46 @@
+YUI.add('media-playernote-views-history', function (Y) {
+  Y.namespace('Sports.PlayerNoteViews.History');
+
+  Y.Sports.PlayerNoteViews.History = Y.Base.create('YSPlayerNoteViewsHistory', Y.Sports.Plugin.PlayerNote.View, [], {
+    initializer: function () {
+
+    },
+
+    renderUI: function () {
+      var oPlug = this,
+          oNote = oPlug.get('oNote');
+
+      this.get('host').set('innerHTML', oNote._newContent);
+    },
+
+    bindUI: function () {
+      var oPlug = this,
+          oNote = oPlug.get('oNote');
+
+      oPlug._handles.afterNoteVisibleChange = oNote.after('visibleChange', Y.bind(oPlug._afterNoteVisibleChange, oPlug));
+      oPlug._handles.onNoteCurrentViewChange = oNote.on('currentViewChange', Y.bind(oPlug._afterNoteVisibleChange, oPlug));
+    },
+
+    _afterNoteVisibleChange: function (e) {
+      var oPlug = this,
+          oNote = oPlug.get('oNote');
+
+      if (e.newVal) {
+        this.get('host').set('innerHTML', oNote._newContent);
+      } else if (oNote.get('currentView') !== 'history') {
+        this.get('host').empty(true);
+      }
+    },
+
+    syncUI: function() {
+      var oPlug = this;
+
+      oPlug.fire('enhanced');
+    }
+
+  }, {
+    ATTRS: {},
+    NS: 'ysplayernoteview'
+  });
+
+},'', {'requires': ['media-playernote-view']});

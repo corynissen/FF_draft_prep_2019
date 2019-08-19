@@ -1,0 +1,130 @@
+var carouselRotate, loryCarousel, slideContainer, dataLength, globalData, clickTimeout, hasError = false, rotateNumber = 0,
+
+	// grab container elements
+	container	 	  = document.getElementById('container'),
+	carouselContainer = document.getElementById('carousel_container'),
+	logoContainer 	  = document.getElementById('logo_container'),
+	promoContainer 	  = document.getElementById('promo_container'),
+	arrowContainer 	  = document.getElementById('arrow_container'),
+	headerContainer   = document.getElementsByTagName('header')[0],
+	clickContainer    = document.getElementById('click_container'),
+
+
+	Ad = {
+
+		/*
+		 *  Adds clickTags to necessary elements
+		 */
+		addClickTags : function() {
+			promoContainer.addEventListener('click', function(){
+				myFT.clickTag(1, myFT.instantAds.clickTag1);
+				myFT.tracker("firstFrameClick");
+			});
+			// clickContainer.addEventListener('click', function(){
+			// 	myFT.clickTag(1, myFT.instantAds.clickTag1);
+			// 	myFT.tracker("carouselClick");
+			// });
+		},
+
+		/*
+		 *  Run all functions to build ad elements
+		 */
+		build : function() {
+			Ad.updateAdColors();
+		},
+
+		/*
+		 *  Format overflowing text and append ... 
+		 */
+		
+
+		/*
+		 *  Error handler
+		 */
+		error : function(error) {
+			var imageElement = new Image();
+
+			hasError = true;
+			console.error(error); // log error
+
+			// add default text
+			imageElement.src = myFT.instantAds.intro_feedFail_img;
+			imageElement.classList.add('ad-size');
+			imageElement.classList.add('error');
+
+			container.innerHTML = '';
+			container.appendChild(imageElement);
+
+			container.style.backgroundColor = myFT.instantAds.background_hex;
+			container.style.borderColor = myFT.instantAds.border_hex;
+			Tracker.impressionTrackEvent("feed_fail");
+
+			myFT.applyClickTag(container, 1, myFT.instantAds.clickTag1);
+
+			Ad.ready();
+		},
+
+		/*
+		 *  Calls in required libraries
+		 */
+		initialize : function(){
+			window.onerror = function(err){
+				Ad.error(err);
+			}
+			Feed.connect();
+			Ad.build(); // build ad elements
+		},
+
+		/*
+		 *  Ad is ready, now show
+		 */
+		ready : function() {
+			// wait a second, let things settle down
+			 
+			setTimeout(function(){
+				container.classList.remove('hidden');
+			}, 500);
+		},
+
+		/*
+		 *  Determine what the background and border will be
+		 */
+		updateAdColors : function() {
+			
+
+			if(myFT.instantAds.intro_feedFail_img.indexOf('blank') === -1){
+				promoContainer.style.backgroundImage = 'url(' + myFT.instantAds.intro_feedFail_img + ')';
+			}
+		},
+	}
+
+		
+
+	Feed = {
+
+		/*
+		 *  Set feed parameters and connect
+		 */
+		connect : function(FeedObj) {
+            var feedParams, ftFeed;
+            // set dynamic parameters
+            feedParams = new FTFeedParams();
+            feedParams.defaultFeedEndpoint = myFT.instantAds.defaultFeedEndpoint;
+            feedParams.feedEndpoint = myFT.instantAds.feedEndpoint;
+            feedParams.segmentId = myFT.instantAds.segmentId;
+
+            // send connection request
+            ftFeed = new FTFeed(myFT, feedParams);
+            ftFeed.getFeed(Feed.success, Ad.error);
+		},
+
+		/*
+		 *  Feed connected successfully, route data
+		 */
+		success : function(feedData, feedUrl) {
+			globalData = feedData;
+			Ad.addClickTags();
+			Ad.ready();
+		}
+
+	};

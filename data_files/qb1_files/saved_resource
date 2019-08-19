@@ -1,0 +1,31 @@
+
+var ftGUID_3989055="4078B5CFDAAB01";
+var ftConfID_3989055="15418704";
+var ftParams_3989055="ftx=&fty=&ftadz=&ftscw=&ft_custom=&ft_section=127793238913086422&ftOBA=1&ft_ifb=1&ft_domain=football.fantasysports.yahoo.com&ft_agentEnv=0&ft_lat=%25%25USER_SL_GEO_LAT%25%25&ft_long=%25%25USER_SL_GEO_LONG%25%25&ft_referrer=https%3A%2F%2Ffootball.fantasysports.yahoo.com%2Ff1%2F800763%2Fplayers&ft_keyword=5112200&cachebuster=659317.4500802028";
+var ftKeyword_3989055="5112200";
+var ftCustom_3989055="";
+var ftSection_3989055="127793238913086422";
+var ftSegment_3989055="tg1,xh0,n7h,xr1,k00,v6j,xqq,vd3,xtx,yo5,xnk,vke,e00,e07,e0549936,e05,e0649936,e06,e01,e08,e01405927012,e08405927012,ytb,sjm,vnt";
+var ftSegmentList_3989055=[{s:'tg1'},{s:'xh0'},{s:'n7h'},{s:'xr1'},{s:'k00'},{s:'v6j'},{s:'xqq'},{s:'vd3'},{s:'xtx'},{s:'yo5'},{s:'xnk'},{s:'vke'},{s:'e00',t:42170031},{s:'e07'},{m:'c5118_lvdiv',s:'e0549936'},{s:'e05'},{m:'c5118_mvdiv',s:'e0649936'},{s:'e06'},{m:'c5118_vcp',s:'e01'},{s:'e08'},{m:'c5118_onp',s:'e01405927012'},{m:'c5118_lvppt',s:'e08405927012'},{s:'ytb'},{s:'sjm'},{s:'vnt'}];
+var ftRuleMatch_3989055="00010000";
+var ftTimestamp_3989055="1566158586";
+var ftGeoC2_3989055="us";
+var ftGeoState_3989055="il";
+var ftGeoCity_3989055="wadsworth";
+var ftISP_3989055="comcast cable communications inc.";
+var ftSpeed_3989055="cable";
+var ftDMA_3989055="602";
+var ftLong_3989055="-87.9321";
+var ftLat_3989055="42.4299";
+var ftPostal_3989055="60083";
+var ftTimeZone_3989055="-500";
+var ftMobileCarrier_3989055="";
+var ftImp3989055 = {};
+ftImp3989055.privacy = "x";
+ftImp3989055.guidAge = "169";
+ftImp3989055.impID = "8F18CD84-18DB-15AF-437F-DE56CF660703";
+ftImp3989055.duid = "FT:4078B5CFDAAB01";
+ftImp3989055.ft_tpplid = "";
+ftImp3989055.ft_c = {};
+
+document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/398/3989055/2512419/js/j-3989055-2512419.js" id="ftscript_m3989055" name="ftscript_m3989055"></scr'+'ipt>');

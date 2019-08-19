@@ -1,0 +1,69 @@
+/***********************
+ * Global styles
+ **********************/
+* {
+	margin: 0; padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+			box-sizing: border-box;
+}
+*.ad-size{ width: 728px; height: 90px; }
+*.hidden{ opacity: 0; }
+*.error{
+    position: absolute;
+    top: 0;
+    left: 0
+}
+img{
+    height: auto;
+    width: auto;
+}
+
+
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 12px;
+	font-style: normal;
+}
+
+div#container{
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	cursor: pointer;
+	border: 0px solid #000;
+	box-sizing: border-box;
+    background-size: 726px 88px;
+}
+
+/***********************
+ * Ad styles
+ **********************/
+/*  BEFORE READY  */
+/*body.bold header > div#cta_container > #cta,
+body.bold header > div#carousel_container > #carousel > ul.slides > li.slide > div.text > div.name,
+body.bold header > div#carousel_container > #carousel > ul.slides > li.slide > div.text > div.price{
+    font-weight: bold !important;
+}*/
+
+div#promo_container{
+    position: absolute;
+    z-index: 11;
+    opacity: 1;
+    -webkit-transition: opacity .5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+       -moz-transition: opacity .5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+        -ms-transition: opacity .5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+         -o-transition: opacity .5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            transition: opacity .5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/*  Footer  */
+div#click_container{
+    position: absolute;
+    top: 0;
+    z-index: 1
+}

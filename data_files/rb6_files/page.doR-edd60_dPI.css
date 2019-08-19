@@ -1,0 +1,75 @@
+html {
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+#yspadHB,
+#yspadHB a,
+#yspadM2 {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  *top: -10px;
+  z-index: 1000;
+}
+
+#yspadHB a {
+  display: block;
+  zoom: 1;
+}
+
+#yspadHB div a {
+  position: relative;
+}
+
+#yspadHB img {
+  display: block;
+}
+
+.aft-data-container {
+  z-index: 200001;
+}
